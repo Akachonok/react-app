@@ -1,0 +1,33 @@
+.categoryes-container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.categoryes-container__wrap {
+  width: 95%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.categoryes-container__item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 150px;
+  height: 50px;
+  cursor: pointer;
+  text-transform: capitalize;
+}
+
+.categoryes-container__item:hover {
+  background: rgb(232, 232, 232);
+}
+
+.products-container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}

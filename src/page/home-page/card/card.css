@@ -1,0 +1,23 @@
+.card-wrap {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 300px;
+  width: 250px;
+}
+
+.card-name-and-text {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.card-wrap__img {
+  height: 150px;
+  max-width: 100%;
+}
+
+.card-price {
+  display: flex;
+  justify-content: space-around;
+}

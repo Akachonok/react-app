@@ -1,0 +1,34 @@
+.logn-form-container, .logn-form {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.logn-form-container {
+  height: calc(100vh - 60px);
+}
+
+.logn-form {
+  height: 350px;
+}
+
+.login-sign-in-text {
+  font-size: 80px;
+  text-transform: uppercase;
+  text-align: center;
+}
+
+.login-form-text-field {
+  margin-top: 20px !important;
+  width: 350px;
+}
+
+.submit-button {
+  margin-top: 20px !important;
+  width: 350px;
+}
+
+.progress-style {
+  position: absolute;
+}
