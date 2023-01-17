@@ -1,19 +1,19 @@
-import { useEffect, useState } from "react";
+import { useState, useEffect } from "react";
 
 import axios, { AxiosError } from "axios";
 
-import { IProduct } from "../../model/poduct";
+import { IProduct } from "../model/poduct";
 
-export function LoadProduct() {
+export function useProducById(productId: string | undefined) {
   const [loading, setLoading] = useState<boolean>(false);
   const [error, setError] = useState<string>('');
-  const [products, setProducts] = useState<IProduct[]>([])
+  const [product, setProduct] = useState<IProduct>()
 
   async function fetchProduct() {
     setLoading(true);
 
-    await axios.get('https://dummyjson.com/products')
-      .then((value)=> setProducts(value.data.products))
+    await axios.get(`https://dummyjson.com/products/${productId}`)
+      .then((value)=> setProduct(value.data))
       .catch((error: AxiosError) => setError(error.message))
       .finally(() => setLoading(false))
   } 
@@ -22,5 +22,5 @@ export function LoadProduct() {
     fetchProduct();
   }, [])
 
-  return { products, error, loading }
+  return { product, error, loading }
 }

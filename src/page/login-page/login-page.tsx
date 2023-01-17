@@ -1,10 +1,8 @@
-import { Header } from '../../components/header/header'
 import { LoginForm } from './login-form/login-form'
 
-export function LoginPage() {
+export default function LoginPage() {
   return (
     <>
-      <Header />
       <LoginForm />
     </>
   )

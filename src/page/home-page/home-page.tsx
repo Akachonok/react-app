@@ -1,14 +1,13 @@
-import { Header } from "../../components/header/header";
 import { Card } from "./card/card";
-import { LoadProduct } from "./product-loading";
+import { useProduct } from "../../hooks/useProducts";
 import { useState } from "react";
 import { IProduct } from "../../model/poduct";
 import { LinearProgress } from "@mui/material";
 
 import './home-page.css'
 
-export function HomePage() {
-  const { products, error, loading } = LoadProduct();
+export default function HomePage() {
+  const { products, error, loading } = useProduct();
   const [ activeProducts, setActiveProducts ] = useState<IProduct[]>([])
 
   const categoryes = Array.from(new Set(products.map((ct) => ct.category)))
@@ -19,7 +18,6 @@ export function HomePage() {
   
   return (
     <>
-      <Header />
       { loading && !error && <LinearProgress /> }
 
       <div className="categoryes-container mt-4 ">
@@ -29,7 +27,7 @@ export function HomePage() {
       </div>
       <div className="products-container mt-4">
         <div className="categoryes-container__wrap">
-        { activeProducts.map(((product) => <Card product={product} key={product.id} />)) }
+          { activeProducts.map(((product) => <Card product={product} key={product.id} />)) }
         </div>
       </div>
     </>
